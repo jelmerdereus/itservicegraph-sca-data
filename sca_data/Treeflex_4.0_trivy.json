@@ -1,0 +1,484 @@
+{
+  "SchemaVersion": 2,
+  "CreatedAt": "2025-06-20T11:11:43.870894+02:00",
+  "ArtifactName": "sbom.json",
+  "ArtifactType": "cyclonedx",
+  "Metadata": {
+    "ImageConfig": {
+      "architecture": "",
+      "created": "0001-01-01T00:00:00Z",
+      "os": "",
+      "rootfs": {
+        "type": "",
+        "diff_ids": null
+      },
+      "config": {}
+    }
+  },
+  "Results": [
+    {
+      "Target": "Python",
+      "Class": "lang-pkgs",
+      "Type": "python-pkg",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2024-53908",
+          "PkgID": "django@5.1.1",
+          "PkgName": "django",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/django@5.1.1",
+            "UID": "4ba7d2793b2f5543",
+            "BOMRef": "django@5.1.1"
+          },
+          "InstalledVersion": "5.1.1",
+          "FixedVersion": "5.0.10, 5.1.4, 4.2.17",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-53908",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "django: Potential SQL injection in HasKey(lhs, rhs) on Oracle",
+          "Description": "An issue was discovered in Django 5.1 before 5.1.4, 5.0 before 5.0.10, and 4.2 before 4.2.17. Direct usage of the django.db.models.fields.json.HasKey lookup, when an Oracle database is used, is subject to SQL injection if untrusted data is used as an lhs value. (Applications that use the jsonfield.has_key lookup via __ are unaffected.)",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-89"
+          ],
+          "VendorSeverity": {
+            "bitnami": 4,
+            "ghsa": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 9.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2024-53908",
+            "https://docs.djangoproject.com/en/dev/releases/security",
+            "https://docs.djangoproject.com/en/dev/releases/security/",
+            "https://github.com/django/django",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/django/PYSEC-2024-157.yaml",
+            "https://groups.google.com/g/django-announce",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-53908",
+            "https://ubuntu.com/security/notices/USN-7136-1",
+            "https://www.cve.org/CVERecord?id=CVE-2024-53908",
+            "https://www.djangoproject.com/weblog/2024/dec/04/security-releases",
+            "https://www.djangoproject.com/weblog/2024/dec/04/security-releases/",
+            "https://www.openwall.com/lists/oss-security/2024/12/04/3"
+          ],
+          "PublishedDate": "2024-12-06T12:15:18.583Z",
+          "LastModifiedDate": "2025-06-09T19:51:17.797Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-53907",
+          "PkgID": "django@5.1.1",
+          "PkgName": "django",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/django@5.1.1",
+            "UID": "4ba7d2793b2f5543",
+            "BOMRef": "django@5.1.1"
+          },
+          "InstalledVersion": "5.1.1",
+          "FixedVersion": "5.1.4, 4.2.17, 5.0.10",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-53907",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "django: Potential denial-of-service in django.utils.html.strip_tags()",
+          "Description": "An issue was discovered in Django 5.1 before 5.1.4, 5.0 before 5.0.10, and 4.2 before 4.2.17. The strip_tags() method and striptags template filter are subject to a potential denial-of-service attack via certain inputs containing large sequences of nested incomplete HTML entities.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "bitnami": 3,
+            "ghsa": 2,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2024-53907",
+            "https://docs.djangoproject.com/en/dev/releases/security",
+            "https://docs.djangoproject.com/en/dev/releases/security/",
+            "https://github.com/django/django",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/django/PYSEC-2024-156.yaml",
+            "https://groups.google.com/g/django-announce",
+            "https://lists.debian.org/debian-lts-announce/2024/12/msg00028.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-53907",
+            "https://ubuntu.com/security/notices/USN-7136-1",
+            "https://ubuntu.com/security/notices/USN-7136-2",
+            "https://www.cve.org/CVERecord?id=CVE-2024-53907",
+            "https://www.djangoproject.com/weblog/2024/dec/04/security-releases",
+            "https://www.djangoproject.com/weblog/2024/dec/04/security-releases/",
+            "https://www.openwall.com/lists/oss-security/2024/12/04/3"
+          ],
+          "PublishedDate": "2024-12-06T12:15:17.73Z",
+          "LastModifiedDate": "2024-12-31T18:15:38.657Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-56374",
+          "PkgID": "django@5.1.1",
+          "PkgName": "django",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/django@5.1.1",
+            "UID": "4ba7d2793b2f5543",
+            "BOMRef": "django@5.1.1"
+          },
+          "InstalledVersion": "5.1.1",
+          "FixedVersion": "5.1.5, 5.0.11, 4.2.18",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-56374",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "django: potential denial-of-service vulnerability in IPv6 validation",
+          "Description": "An issue was discovered in Django 5.1 before 5.1.5, 5.0 before 5.0.11, and 4.2 before 4.2.18. Lack of upper-bound limit enforcement in strings passed when performing IPv6 validation could lead to a potential denial-of-service attack. The undocumented and private functions clean_ipv6_address and is_valid_ipv6_address are vulnerable, as is the django.forms.GenericIPAddressField form field. (The django.db.models.GenericIPAddressField model field is not affected.)",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "bitnami": 2,
+            "ghsa": 2,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:L",
+              "V3Score": 5.8
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:L",
+              "V3Score": 5.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:L",
+              "V3Score": 5.8
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2025/01/14/2",
+            "https://access.redhat.com/security/cve/CVE-2024-56374",
+            "https://docs.djangoproject.com/en/dev/releases/security",
+            "https://docs.djangoproject.com/en/dev/releases/security/",
+            "https://github.com/django/django",
+            "https://github.com/django/django/commit/4806731e58f3e8700a3c802e77899d54ac6021fe",
+            "https://github.com/django/django/commit/ad866a1ca3e7d60da888d25d27e46a8adb2ed36e",
+            "https://github.com/django/django/commit/ca2be7724e1244a4cb723de40a070f873c6e94bf",
+            "https://github.com/django/django/commit/e8d4a2005955dcf962193600b53bf461b190b455",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/django/PYSEC-2025-1.yaml",
+            "https://groups.google.com/g/django-announce",
+            "https://lists.debian.org/debian-lts-announce/2025/01/msg00024.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-56374",
+            "https://ubuntu.com/security/notices/USN-7205-1",
+            "https://ubuntu.com/security/notices/USN-7205-2",
+            "https://www.cve.org/CVERecord?id=CVE-2024-56374",
+            "https://www.djangoproject.com/weblog/2025/jan/14/security-releases",
+            "https://www.djangoproject.com/weblog/2025/jan/14/security-releases/"
+          ],
+          "PublishedDate": "2025-01-14T19:15:32.51Z",
+          "LastModifiedDate": "2025-01-23T18:15:32.82Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-26699",
+          "PkgID": "django@5.1.1",
+          "PkgName": "django",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/django@5.1.1",
+            "UID": "4ba7d2793b2f5543",
+            "BOMRef": "django@5.1.1"
+          },
+          "InstalledVersion": "5.1.1",
+          "FixedVersion": "4.2.20, 5.0.13, 5.1.7",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-26699",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "django: Potential denial-of-service vulnerability in django.utils.text.wrap()",
+          "Description": "An issue was discovered in Django 5.1 before 5.1.7, 5.0 before 5.0.13, and 4.2 before 4.2.20. The django.utils.text.wrap() method and wordwrap template filter are subject to a potential denial-of-service attack when used with very long strings.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "bitnami": 2,
+            "ghsa": 2,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:L",
+              "V3Score": 5
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:L",
+              "V3Score": 5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2025/03/06/12",
+            "https://access.redhat.com/security/cve/CVE-2025-26699",
+            "https://docs.djangoproject.com/en/dev/releases/security",
+            "https://docs.djangoproject.com/en/dev/releases/security/",
+            "https://github.com/advisories/GHSA-p3fp-8748-vqfq",
+            "https://github.com/django/django",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/django/PYSEC-2025-13.yaml",
+            "https://groups.google.com/g/django-announce",
+            "https://lists.debian.org/debian-lts-announce/2025/03/msg00012.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-26699",
+            "https://ubuntu.com/security/notices/USN-7335-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-26699",
+            "https://www.djangoproject.com/weblog/2025/mar/06/security-releases",
+            "https://www.djangoproject.com/weblog/2025/mar/06/security-releases/"
+          ],
+          "PublishedDate": "2025-03-06T19:15:27.683Z",
+          "LastModifiedDate": "2025-03-19T20:15:19.543Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-27556",
+          "PkgID": "django@5.1.1",
+          "PkgName": "django",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/django@5.1.1",
+            "UID": "4ba7d2793b2f5543",
+            "BOMRef": "django@5.1.1"
+          },
+          "InstalledVersion": "5.1.1",
+          "FixedVersion": "5.0.14, 5.1.8",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-27556",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "django: Django DoS Unicode Attack",
+          "Description": "An issue was discovered in Django 5.1 before 5.1.8 and 5.0 before 5.0.14. The NFKC normalization is slow on Windows. As a consequence, django.contrib.auth.views.LoginView, django.contrib.auth.views.LogoutView, and django.views.i18n.set_language are subject to a potential denial-of-service attack via certain inputs with a very large number of Unicode characters.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "ghsa": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:L",
+              "V3Score": 5.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:L",
+              "V3Score": 5.8
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2025/04/02/2",
+            "https://access.redhat.com/security/cve/CVE-2025-27556",
+            "https://docs.djangoproject.com/en/dev/releases/security",
+            "https://docs.djangoproject.com/en/dev/releases/security/",
+            "https://github.com/django/django",
+            "https://github.com/django/django/commit/2cb311f7b069723027fb5def4044d1816d7d2afd",
+            "https://github.com/django/django/commit/39e2297210d9d2938c75fc911d45f0e863dc4821",
+            "https://github.com/django/django/commit/8c6871b097b6c49d2a782c0d80d908bcbe2116f1",
+            "https://github.com/django/django/commit/edc2716d01a6fdd84b173c02031695231bcee1f8",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/django/PYSEC-2025-14.yaml",
+            "https://groups.google.com/g/django-announce",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-27556",
+            "https://www.cve.org/CVERecord?id=CVE-2025-27556",
+            "https://www.djangoproject.com/weblog/2025/apr/02/security-releases",
+            "https://www.djangoproject.com/weblog/2025/apr/02/security-releases/"
+          ],
+          "PublishedDate": "2025-04-02T13:15:44.373Z",
+          "LastModifiedDate": "2025-04-02T22:15:19.367Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-32873",
+          "PkgID": "django@5.1.1",
+          "PkgName": "django",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/django@5.1.1",
+            "UID": "4ba7d2793b2f5543",
+            "BOMRef": "django@5.1.1"
+          },
+          "InstalledVersion": "5.1.1",
+          "FixedVersion": "4.2.21, 5.1.9, 5.2.1",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-32873",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "django: Django StripTags Denial of Service",
+          "Description": "An issue was discovered in Django 4.2 before 4.2.21, 5.1 before 5.1.9, and 5.2 before 5.2.1. The django.utils.html.strip_tags() function is vulnerable to a potential denial-of-service (slow performance) when processing inputs containing large sequences of incomplete HTML tags. The template filter striptags is also vulnerable, because it is built on top of strip_tags().",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "bitnami": 3,
+            "ghsa": 2,
+            "nvd": 3,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "bitnami": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2025/05/07/1",
+            "https://access.redhat.com/security/cve/CVE-2025-32873",
+            "https://docs.djangoproject.com/en/dev/releases/security",
+            "https://docs.djangoproject.com/en/dev/releases/security/",
+            "https://github.com/django/django",
+            "https://github.com/django/django/commit/9f3419b519799d69f2aba70b9d25abe2e70d03e0",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/django/PYSEC-2025-37.yaml",
+            "https://groups.google.com/g/django-announce",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-32873",
+            "https://ubuntu.com/security/notices/USN-7501-1",
+            "https://ubuntu.com/security/notices/USN-7501-2",
+            "https://www.cve.org/CVERecord?id=CVE-2025-32873",
+            "https://www.djangoproject.com/weblog/2025/may/07/security-releases",
+            "https://www.djangoproject.com/weblog/2025/may/07/security-releases/"
+          ],
+          "PublishedDate": "2025-05-08T04:17:18.157Z",
+          "LastModifiedDate": "2025-06-17T19:44:20.957Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-48432",
+          "PkgID": "django@5.1.1",
+          "PkgName": "django",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/django@5.1.1",
+            "UID": "4ba7d2793b2f5543",
+            "BOMRef": "django@5.1.1"
+          },
+          "InstalledVersion": "5.1.1",
+          "FixedVersion": "5.2.2, 5.1.10, 4.2.22",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-48432",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "django: Django Path Injection Vulnerability",
+          "Description": "An issue was discovered in Django 5.2 before 5.2.3, 5.1 before 5.1.11, and 4.2 before 4.2.23. Internal HTTP response logging does not escape request.path, which allows remote attackers to potentially manipulate log output via crafted URLs. This may lead to log injection or forgery when logs are viewed in terminals or processed by external systems.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-117"
+          ],
+          "VendorSeverity": {
+            "ghsa": 2,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:L/A:N",
+              "V3Score": 4
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:N",
+              "V3Score": 5.4
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2025/06/04/5",
+            "http://www.openwall.com/lists/oss-security/2025/06/10/2",
+            "http://www.openwall.com/lists/oss-security/2025/06/10/3",
+            "http://www.openwall.com/lists/oss-security/2025/06/10/4",
+            "https://access.redhat.com/security/cve/CVE-2025-48432",
+            "https://docs.djangoproject.com/en/dev/releases/security",
+            "https://docs.djangoproject.com/en/dev/releases/security/",
+            "https://github.com/django/django",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/django/PYSEC-2025-47.yaml",
+            "https://groups.google.com/g/django-announce",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-48432",
+            "https://ubuntu.com/security/notices/USN-7555-1",
+            "https://ubuntu.com/security/notices/USN-7555-2",
+            "https://ubuntu.com/security/notices/USN-7555-3",
+            "https://www.cve.org/CVERecord?id=CVE-2025-48432",
+            "https://www.djangoproject.com/weblog/2025/jun/04/security-releases",
+            "https://www.djangoproject.com/weblog/2025/jun/04/security-releases/",
+            "https://www.djangoproject.com/weblog/2025/jun/10/bugfix-releases",
+            "https://www.djangoproject.com/weblog/2025/jun/10/bugfix-releases/"
+          ],
+          "PublishedDate": "2025-06-05T03:15:25.563Z",
+          "LastModifiedDate": "2025-06-10T18:15:32.79Z"
+        }
+      ]
+    }
+  ]
+}
