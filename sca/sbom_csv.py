@@ -16,7 +16,7 @@ class SbomData:
 
     def transform(self, folder: PathLike):
         self.__read_dir(folder)
-        self.__output_csv("../data/app-sbom.csv")
+        self.__output_csv("../data/app-components.csv")
 
     def __read_dir(self, folder: PathLike):
         logging.info(f"Reading SBOM data from {folder}")
