@@ -13,7 +13,6 @@ logging.basicConfig(level=logging.DEBUG, format="%(asctime)s %(levelname)s %(mes
 class SbomData:
     def __init__(self):
         self._data = []
-        self._direct_components = set()
 
     def transform(self, folder: PathLike):
         self.__read_dir(folder)
@@ -52,6 +51,8 @@ class SbomData:
     def __process_sbom(self, filename: str, data: dict):
         logging.info(f"Processing SBOM from {filename}")
 
+        direct_component_refs = set()
+
         # extract the application name and version info from the filename
         meta_data = self.__extract_from_filename(filename)
 
@@ -70,7 +71,7 @@ class SbomData:
                 sca_data["purl"] = component["purl"]
                 sca_data["transitive"] = "false"
 
-                self._direct_components.add(component["purl"])
+                direct_component_refs.add(component["purl"])
                 self._data.append(sca_data)
 
         # all dependencies, including transitive
@@ -78,7 +79,7 @@ class SbomData:
             sca_data = {**meta_data}
 
             # skip direct dependencies
-            if component["purl"] in self._direct_components:
+            if component["purl"] in direct_component_refs:
                 continue
 
             sca_data["component"] = component["name"].split("/")[-1]
@@ -86,7 +87,7 @@ class SbomData:
             sca_data["purl"] = component["purl"]
 
             sca_data["transitive"] = "false"
-            if len(self._direct_components) != 0:
+            if len(direct_component_refs) != 0:
                 sca_data["transitive"] = "true"
 
             self._data.append(sca_data)
@@ -97,7 +98,7 @@ class SbomData:
 
         fields = ["name", "app_version", "date", "source", "component", "component_version", "purl", "transitive"]
         try:
-            dictwriter = csv.DictWriter(open(filename, "w"), fieldnames=fields)
+            dictwriter = csv.DictWriter(open(filename, "w"), fieldnames=fields, quoting=csv.QUOTE_ALL)
             dictwriter.writeheader()
             dictwriter.writerows(self._data)
         except IOError:
