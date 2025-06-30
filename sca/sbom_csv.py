@@ -98,7 +98,7 @@ class SbomData:
 
         fields = ["name", "app_version", "date", "source", "component", "component_version", "purl", "transitive"]
         try:
-            dictwriter = csv.DictWriter(open(filename, "w"), fieldnames=fields, quoting=csv.QUOTE_ALL)
+            dictwriter = csv.DictWriter(open(filename, "w"), fieldnames=fields, quoting=csv.QUOTE_ALL, delimiter=";")
             dictwriter.writeheader()
             dictwriter.writerows(self._data)
         except IOError:
