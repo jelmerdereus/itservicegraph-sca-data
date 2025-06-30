@@ -66,9 +66,8 @@ RETURN count(*);
 
 LOAD CSV WITH HEADERS FROM $filename AS line FIELDTERMINATOR ';'
 WITH line.appOwner AS swOwner, line.appName AS swName, line.appVersion AS swVersion
-MERGE (a:Software {swName: swName})
-ON CREATE SET a.swVersion = swVersion,
-a.swVendor = "Vendor-"+swName,
+MERGE (a:Software {swName: swName, swVersion: swVersion})
+ON CREATE SET a.swVendor = "Vendor-"+swName,
 a.swFirstSeen = date() - duration('P1Y'),
 a.swLastUpdated = date() - duration('P2Y'),
 a.swOwner = swOwner
