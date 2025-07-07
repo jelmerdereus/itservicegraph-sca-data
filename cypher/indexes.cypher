@@ -60,3 +60,4 @@ CREATE INDEX IF NOT EXISTS FOR (n:Finding) ON (n.link);
 CREATE INDEX IF NOT EXISTS FOR (n:Finding) ON (n.file);
 CREATE INDEX IF NOT EXISTS FOR (n:Finding) ON (n.location);
 CREATE INDEX IF NOT EXISTS FOR (n:Finding) ON (n.source);
+CREATE INDEX IF NOT EXISTS FOR (n:Finding) ON (n.ref);
