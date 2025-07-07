@@ -10,3 +10,10 @@
 ```bash
 bearer scan . --severity critical,high,medium --format json --output Alphazap_8.1_bearer.json
 ```
+
+
+#### Transform the JSON data into CSV
+
+```bash
+python3 bearer_csv.py ./raw_data
+```
