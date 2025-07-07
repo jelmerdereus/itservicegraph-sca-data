@@ -19,6 +19,7 @@ CREATE CONSTRAINT serverNameExists FOR (n:Server) REQUIRE n.serverName IS NOT NU
 CREATE CONSTRAINT assetNrExistsSvr FOR (n:Server) REQUIRE n.assetNr IS NOT NULL;
 
 CREATE CONSTRAINT uniqueRefNotNull FOR (n:Snapshot) REQUIRE n.ref IS NOT NULL;
+CREATE CONSTRAINT uniqueRefNotNull FOR (n:Snapshot) REQUIRE n.type IS NOT NULL;
 CREATE CONSTRAINT uniqueRefExists FOR (n:Snapshot) REQUIRE n.ref IS UNIQUE;
 
 CREATE CONSTRAINT purlNotNull FOR (n:SoftwareComponent) REQUIRE n.purl IS NOT NULL;
@@ -26,6 +27,9 @@ CREATE CONSTRAINT purlExists FOR (n:SoftwareComponent) REQUIRE n.purl IS UNIQUE;
 
 CREATE CONSTRAINT vulnRefExists FOR (n:Vulnerability) REQUIRE n.vulnerability_id IS NOT NULL;
 CREATE CONSTRAINT vulnRefUnique FOR (n:Vulnerability) REQUIRE n.vulnerability_id IS UNIQUE;
+
+CREATE CONSTRAINT fnRefExists FOR (n:Finding) REQUIRE n.ref IS NOT NULL;
+CREATE CONSTRAINT fnRefUNique FOR (n:Finding) REQUIRE n.ref IS UNIQUE;
 
 // Indexes
 CREATE INDEX IF NOT EXISTS FOR (n:Customer) ON (n.customerName);
@@ -47,3 +51,12 @@ CREATE INDEX IF NOT EXISTS FOR (n:Vulnerability) ON (n.severity);
 CREATE INDEX IF NOT EXISTS FOR (n:Vulnerability) ON (n.title);
 CREATE INDEX IF NOT EXISTS FOR (n:Vulnerability) ON (n.cvss);
 CREATE INDEX IF NOT EXISTS FOR (n:Vulnerability) ON (n.source);
+CREATE INDEX IF NOT EXISTS FOR (n:Finding) ON (n.severity);
+CREATE INDEX IF NOT EXISTS FOR (n:Finding) ON (n.cwe_ids);
+CREATE INDEX IF NOT EXISTS FOR (n:Finding) ON (n.rule);
+CREATE INDEX IF NOT EXISTS FOR (n:Finding) ON (n.title);
+CREATE INDEX IF NOT EXISTS FOR (n:Finding) ON (n.description);
+CREATE INDEX IF NOT EXISTS FOR (n:Finding) ON (n.link);
+CREATE INDEX IF NOT EXISTS FOR (n:Finding) ON (n.file);
+CREATE INDEX IF NOT EXISTS FOR (n:Finding) ON (n.location);
+CREATE INDEX IF NOT EXISTS FOR (n:Finding) ON (n.source);

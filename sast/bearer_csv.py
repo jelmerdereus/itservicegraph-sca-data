@@ -81,8 +81,6 @@ class SoftwareVulnerabilityData:
                 except KeyError:
                     fdata["location"] = ""
 
-                fdata["code"] = finding["code_extract"]
-
                 try:
                     fdata["ref"] = "{}_{}_{}".format(
                         fdata["file"],
@@ -99,7 +97,7 @@ class SoftwareVulnerabilityData:
     def __output_csv(self, filename: str):
         logging.info(f"Writing Bearer data to {filename}")
 
-        fields = ["name", "app_version", "date", "source", "severity", "cwe", "rule", "title", "link", "description", "file", "location", "code", "ref"]
+        fields = ["name", "app_version", "date", "source", "severity", "cwe", "rule", "title", "link", "description", "file", "location", "ref"]
         try:
             dictwriter = csv.DictWriter(open(filename, "w"), fieldnames=fields, quoting=csv.QUOTE_ALL, delimiter=";")
             dictwriter.writeheader()
