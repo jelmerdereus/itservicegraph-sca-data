@@ -11,6 +11,6 @@ ON CREATE SET sn.date = date, sn.type = 'SAST', sn.source = source
 MERGE (sn)-[:SNAPSHOT_OF]-(sw)
 // create findings
 MERGE (fn:Finding {ref: ref})
-ON CREATE SET fn.severity = severity, fn.cwe_ids = cwe_ids, fn.rule = rule, fn.title = title, fn.description = description, fn.link = link, fn.file = file, fn.location = location
+ON CREATE SET fn.severity = severity, fn.cwe_ids = cwe_ids, fn.rule = rule, fn.title = title, fn.description = description, fn.link = link, fn.file = file, fn.location = location, fn.source = source
 MERGE (fn)-[:IDENTIFIED_IN]-(sn)
 RETURN count(*)

@@ -64,7 +64,7 @@ class SoftwareVulnerabilityData:
         for severity, findings in data.items():
             for finding in findings:
                 fdata = {**meta_data}
-                fdata["severity"] = severity
+                fdata["severity"] = severity.lower()
                 fdata["cwe"] = finding["cwe_ids"]
                 fdata["rule"] = finding["id"]
                 fdata["title"] = finding["title"]
